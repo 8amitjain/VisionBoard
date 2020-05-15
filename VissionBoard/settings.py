@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get('DEBUG_VALUE') == "True")
 
-ALLOWED_HOSTS = ['vision-board.herokuapp.com']
+ALLOWED_HOSTS = ['https://vision-board.herokuapp.com/']
 
 
 # Application definition
