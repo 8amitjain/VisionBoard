@@ -1,0 +1,98 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href='{% static "home/main-new.css" %}'>
+{% endblock %}
+
+{% block content %}
+    <div class="hero-bg">
+         <section class="top">
+              <div class="content">
+                    <h1><span>MAKE YOUR DREAMS COME TRUE WITH A VISION BOARD</span></h1>
+
+                    <p>We help you create an amazing online Vision Board!</p>
+
+                    <button><a href=#ans><span>What is vision Board? </span></a></button>
+              </div>
+         </section>
+    </div>
+
+    <section class="middle2">
+        <div class="container-about">
+            <p id="ans"></p>
+            <h2>Vision Board</h2>
+
+            <p>A Vision Board is a visual representation of the things you want to manifest in your life.</p>
+
+            <p>The idea behind this is that when you surround yourself with images of your ideal life your life changes to match those images and those desires through the power of visualization Know more</p>
+
+            <p>Vision Boards work by programming the part of the brain responsible for attention, the reticular activating system. By focusing your mind to the things you want in your life you are able to see new ways to achieve these things in reality.</p>
+                        <!-- , An online Vision Board is a great way to make your goals a reality! -->
+            <div class="center-btn">
+                <button><a href="{% url 'users-login' %}">Get started!</a></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="middle-2">
+
+        <div class="right-col">
+            <img src="{% static 'home/images/2.PNG' %}" alt="">
+        </div>
+
+        <div class="parent">
+            <img src="{% static 'home/images/mobile.PNG' %}" alt="Vision Board">
+        </div>
+
+        <div class="block">
+            <h2>Create your Vision Board right now!</h2>
+            <div class="center-btn-2">
+                <button><a href="{% url 'users-login' %}">Get started!</a></button>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="bottom">
+            <h2>Why Vision Board Work's</h2>
+<!-- make use of  -->
+            <div class="row">
+
+                <p>Online vision boards tend to be so effective, they give you a clear picture of what your life will be like if you put in the time and effort in makeing one. Also It provides you with the motivation you need.</p>
+
+                <p>Put your board somewhere you’ll see it regularly, like your phone screen saver or on social media. You can also print out your board and place it on your bedroom wall or stick it in front of your desk at work.</p>
+
+                <p>When you’re creating your personalised image, you’re prompted to put serious thought into what your goals actually are and which direction you want your life to take. If you are unsure of what you want from life then putting some thoughts is a good first step to correcting that. It helps give you focus and gives you the platform to start taking action</p>
+
+                <p>Sometimes you need to grit your teeth and get a bit angry at yourself when you feel you’ve lost focus. Vision boards help you stay passionate and motivated. They are also sometimes known as both dream boards and action boards, which is fitting, as they give you the platform to dream big and to act decisively.</p>
+            </div>
+    </section>
+
+    <section class="footer">
+        <div class="end-block">
+
+            <!-- create a about the author/deveroper page -->
+            <h3>Let's Get In Touch!</h3>
+
+            <p>Drop us a line or catch up with us and other like minded individuals on social media!</p>
+
+            <div class="row">
+                <div class="column">
+                    <a href="mailto:8amitjain@gmail.com"><img src="{% static 'home/icons/envelope-regular.svg' %}" alt="logo"></a>
+                </div>
+
+                <div class="column">
+                    <a href="https://www.instagram.com/amitjain018/"><img src="{% static 'home/icons/instagram-brands.svg' %}" alt="logo"></a>
+                </div>
+
+                <div class="column">
+                    <a href="https://www.facebook.com/profile.php?id=100008211617241"><img src="{% static 'home/icons/facebook-brands.svg' %}" alt="logo"></a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+{% endblock content %}

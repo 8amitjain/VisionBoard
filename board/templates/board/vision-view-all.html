@@ -1,0 +1,110 @@
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href='{% static "board/all.min.css" %}'> <!-- styling of this page-->
+<link rel="stylesheet" href='{% static "board/all.css" %}'> <!-- styling of this page-->
+<link rel="stylesheet" href='{% static "board/view-all.css" %}'> <!-- styling of this page-->
+{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Vision Board</title>
+</head>
+<body>
+    <div>
+        <br>
+            <a href="/" style="text-decoration:none; color:black; font-size:2em; margin-left:5%;">Back</a>
+        <br>
+    </div>
+{% ifnotequal len_vision 5 %}
+    <div class="container-mine">
+        {% for photos in vision %}
+            <div class="card-mine">
+                <a href="{% url 'vision-view' photos.id %}"> <img src="{{photos.image.url}}" class="inner-img"> </a>
+                    <div class="card__head">
+                        <div class="right-col">
+                            <a href="{% url 'popup-detail-view' photos.id %}"><img src="{% static 'board/icons/ellipsis-h-solid.svg' %}"></a>
+                        </div>
+                    <div class="left-col">{{ photos.title}}</div>
+                </div>
+            </div>
+            {% endfor %}
+
+            {% for x in 012|make_list %}
+
+                {% ifnotequal len_vision 5 %}
+                      <div class="card-mine">
+                    <a href="{% url 'vision-create' %}">  <img src="{% static 'board/icons/images.png' %}" class="inner-img"></a>
+                  <div class="card__head">
+                      <div class="right-col">
+                              <a href="{% url 'vision-create' %}"><img src="{% static 'board/icons/ellipsis-h-solid.svg' %}"></a>
+                      </div>
+                      <div class="left-col"><a href="{% url 'vision-create' %}" style="color:black;">Add Vision Board</a></div>
+                  </div>
+              </div>
+                {% else %}
+                    <h1>{{len_vision}}</h1>
+            {% endifnotequal %}
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="container-mine">
+        {% for photos in vision %}
+            <div class="card-mine">
+                <a href="{% url 'vision-view' photos.id %}"> <img src="{{photos.image.url}}" class="inner-img"> </a>
+                    <div class="card__head">
+                        <div class="right-col">
+                            <a href="{% url 'popup-detail-view' photos.id %}"><img src="{% static 'board/icons/ellipsis-h-solid.svg' %}"></a>
+                        </div>
+                    <div class="left-col">{{ photos.title}}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+{% endifnotequal %}
+<div class="mobile">
+    {% for photos in vision %}
+
+    <div class="modal-content-mobile">
+
+        <div class="container-grid-mobile"></div>
+
+        <div class="vb-content-mobile">
+            <a href="{% url 'vision-view' photos.id %}" class="link-info"><h2 class="name-main-mobile">{{ photos.title}}</h2></a>
+            <a href="{% url 'vision-view' photos.id %}"> <img src="{{photos.image.url}}"></a>
+
+        </div>
+
+        <div class="content-mobile">
+            <div>
+                <a href="{% url 'basic_upload' photos.id %}" class="link-info">Update Images</a>
+            </div>
+                <hr>
+            <div>
+                <a href="{% url 'vision-update' photos.id %}" class="link-info">Update Vision Board Profile </a>
+            </div>
+                <hr>
+            <div>
+                <a href="{% url 'vision-delete' photos.id %}" class="link-danger">Delete Vision Board</a>
+            </div>
+                <hr>
+        </div>
+    </div>
+    {% endfor %}
+    <br>
+    <br>
+
+</div>
+
+{% endblock content %}
+</body>
+</html>
+
+
+

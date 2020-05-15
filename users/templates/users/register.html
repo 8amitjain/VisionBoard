@@ -1,0 +1,44 @@
+{% extends "home/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block css%}
+<style>
+        .content-section{
+            margin: 5%;
+            padding: 2em;
+            border-radius: 2em;
+            border-style: solid;
+            border-color:#f8f8f8;
+        }
+        @media only screen and (min-width: 1250px) {
+          .content-section{
+            margin: 5em 15%;
+            padding: 2em;
+            border-radius: 2em;
+            border-style: solid;
+            border-color:#f8f8f8;
+            font-size: 1.2em;
+        }
+        }
+
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Register</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="{% url 'users-login' %}">Login</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,50 @@
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href='{% static "board/view-all.css" %}'> <!-- styling of this page-->
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="view-all.css">
+    <title>Document</title>
+</head>
+<body style="margin:5% 40%;background-color:#000" >
+{% for photos in vision %}
+    {% if photos.id == pk %}
+<div class="myDIV">
+    <div class="main-div">
+        <div class="container-grid">
+            <button class="link"><a href="{% url 'vision-view-all' %}" class="link"> Close</a></button>
+        </div>
+            <hr>
+
+        <div class="vb-content">
+            <a href="{% url 'vision-view' pk %}" class="link-info"><h2 class="name-main">{{ photos.title}}</h2></a>
+            <img src="{{photos.image.url}}" alt="">
+        </div>
+
+        <div class="content">
+
+            <div>
+                <a href="{% url 'basic_upload' pk %}" class="link-info">Update Images</a>
+            </div>
+                <hr>
+            <div>
+                <a href="{% url 'vision-update' pk %}" class="link-info">Update Vision Board Profile </a>
+            </div>
+                <hr>
+            <div>
+                <a href="{% url 'vision-delete' pk %}" class="link-danger">Delete Vision Board</a>
+            </div>
+                <hr>
+        </div>
+
+</div>
+</div>
+{% endif %}
+{% endfor %}
+
+</body>
+</html>

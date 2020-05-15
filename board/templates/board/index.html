@@ -1,0 +1,84 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block javascript %}
+  {# JQUERY FILE UPLOAD SCRIPTS #}
+  <script src="{% static 'board/jquery.ui.widget.js' %}"></script>
+  <script src="{% static 'board/jquery.iframe-transport.js' %}"></script>
+  <script src="{% static 'board/jquery.fileupload.js' %}"></script>
+
+  <script src="{% static 'board/basic-upload.js' %}"></script>
+{% endblock  %}
+
+
+{% block css %}
+  <link rel="stylesheet" type="text/css" href='{% static "board/all.min.css" %}'>
+  <link rel="stylesheet" type="text/css" href='{% static "board/all.css" %}'>
+  <link rel="stylesheet" type="text/css" href='{% static "board/main.css" %}'>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="section-margin">
+  <div class="float-container">
+      <span class="fas fa-cloud-upload-alt" style="font-size: 5rem;"></span>
+          <br>
+          <br>
+      <a class="js-upload-photos" style="cursor: pointer; color:SlateGray">
+         <strong style="font-size: 20px">Choose a file</strong>
+      </a> or drag it here.
+
+  </div>
+
+  <div class="show-mobile">
+      <button class="js-upload-photos" style="cursor: pointer; color:SlateGray">
+        <strong style="font-size: 20px">Add Photos</strong>
+      </button>
+  </div>
+<h2 style="color:deepskyblue; text-align:center; margin-top:1em;">Please refresh the page if photos are not getting updated!</h2>
+<input id="fileupload" type="file" name="file" multiple
+       style="display: none;"
+       data-url="{% url 'basic_upload' pk %}"
+       data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+      <br>
+      <br>
+</div>
+
+
+<main>
+    {% for photo in photos %}
+        {% if photo.vision_id == pk %}
+            <div class="card-mine-here">
+                <img src="{{ photo.file.url }}" alt="">
+                    <div class="info-mine">
+                        <div class="bottom-text">
+                            <a href="{% url 'vision-image-delete' photo.id %}" class="link-info">Delete Image</a>
+                            <a href="{% url 'vision-image-delete' photo.id %}"><span class="far fa-trash-alt"></span></a>
+                        </div>
+                    </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</main>
+
+<!--<div class="show-mobile">-->
+<!--{% for photo in photos %}-->
+<!--    {% if photo.vision_id == pk %}-->
+<!--        <div class="modal-content-mobile">-->
+<!--            <div class="vb-content">-->
+<!--                <img src="{{ photo.file.url }}" alt="">-->
+<!--            </div>-->
+
+<!--            <div class="content">-->
+<!--                <div class="bottom-text">-->
+<!--                    <a href="{% url 'vision-image-delete' photo.id %}" class="link-info">Delete Image</a>-->
+<!--                    <a href="{% url 'vision-image-delete' photo.id %}"><span class="far fa-trash-alt"></span></a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--         </div>-->
+<!--    {% endif %}-->
+<!--{% endfor %}-->
+<!--</div>-->
+{% endblock %}
+

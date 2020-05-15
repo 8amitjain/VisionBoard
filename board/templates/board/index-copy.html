@@ -1,0 +1,126 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block javascript %}
+  {# JQUERY FILE UPLOAD SCRIPTS #}
+  <script src="{% static 'board/jquery.ui.widget.js' %}"></script>
+  <script src="{% static 'board/jquery.iframe-transport.js' %}"></script>
+  <script src="{% static 'board/jquery.fileupload.js' %}"></script>
+
+  <script src="{% static 'board/basic-upload.js' %}"></script>
+{% endblock  %}
+
+
+{% block css %}
+  <link rel="stylesheet" type="text/css" href='{% static "board/all.min.css" %}'>
+  <link rel="stylesheet" type="text/css" href='{% static "board/all.css" %}'>
+  <link rel="stylesheet" type="text/css" href='{% static "board/main.css" %}'>
+
+  <style>
+          float-container {
+          height: 500px;
+          width:1200px;
+      }
+
+        .float-child{
+            width: 50%;
+            width: 50%;
+            float: left;
+            padding: 20px;
+            border: 2px ;
+        }
+
+        .float-child-large{
+            color:SlateGray;
+            outline-style: dashed;
+            background-color: LightBlue;
+            outline-offset: -10px;
+            height: 400px;
+            width:800px;
+
+        }
+
+        .float-child-small{
+            border-radius: 5px;
+            color:SlateGray;
+            outline-offset: -10px;
+            height: 180px;
+            width:250px;
+
+        }
+            .section-margin{
+                margin: 5%;
+                padding: 2em;
+              
+            }
+          @media only screen and (min-width: 1250px) {
+            .section-margin{
+              margin: 5em 6%;
+              padding: 2em;
+          }
+          }
+
+      </style>
+  {% endblock %}
+
+
+{% block content %}
+<div class="section-margin">
+  <div class="float-container">
+
+  <div class="float-child">
+    <div class="float-child-large" style="padding-top: 8rem; padding-bottom: 3rem; padding-left: 20rem;">
+
+      <span class="fas fa-cloud-upload-alt" style="font-size: 5rem;"></span>
+      <!--  <h3 style="">Drop Photos Here to Upload</h3>-->
+        <br> <br>
+      <a class="js-upload-photos" href="" style="cursor: pointer; color:SlateGray">
+         <strong style="font-size: 20px">Choose a file</strong>
+      </a> or drag it here.
+
+    </div>
+    </div>
+
+<br>
+<input id="fileupload" type="file" name="file" multiple
+       style="display: none;"
+       data-url="{% url 'basic_upload' pk %}"
+       data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+      <br>
+      <br>
+<table id="gallery" class="table table-bordered">
+  <thead>
+    <tr>
+      <th style="padding-left: 20%;">Image</th>
+      <th></th>
+
+
+      <th style="padding-left: 20%;">Image</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for photo in photos %}
+    {% if photo.vision_id == pk %}
+      {% if forloop.counter|divisibleby:2 %}
+        <tr>
+        <td><img class="img-responsive" style="border-radius: 8px;" src="{{ photo.file.url }}"> </td>
+        <td><a class="btn btn-secondary btn-sm" href="{% url 'vision-image-delete' photo.id %}"><span class="far fa-trash-alt"></span></a></td>
+
+        {% else %}
+          <td><img class="img-responsive" style="border-radius: 8px;" src="{{ photo.file.url }}"> </td>
+          <td><a class="btn btn-secondary btn-sm" href="{% url 'vision-image-delete' photo.id %}"><span class="far fa-trash-alt"></span></a></td>
+          </tr>
+    {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  </tbody>
+</table>
+<a class="btn btn-info btn-sm mt-1 mb-1" href="{% url 'vision-update' pk %}" >Update This Vision Board</a>
+<a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'vision-delete' pk %}" >Delete This Vision Board</a>
+</div>
+</div>
+{% endblock %}
+

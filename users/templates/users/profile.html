@@ -1,0 +1,48 @@
+{% extends "home/base.html" %}
+{% load crispy_forms_tags %}
+{% block css%}
+<style>
+        .content-section{
+            margin: 5%;
+            padding: 2em;
+            border-radius: 2em;
+            border-style: solid;
+            border-color:#f8f8f8;
+        }
+        @media only screen and (min-width: 1250px) {
+          .content-section{
+            margin: 5em 15%;
+            padding: 2em;
+            border-radius: 2em;
+            border-style: solid;
+            border-color:#f8f8f8;
+            font-size: 1.2em;
+        }
+        }
+
+    </style>
+{% endblock%}
+{% block content %}
+
+     <div class="content-section">
+    <div class="media">
+      <div class="media-body">
+        <h2 class="account-heading">{{ user.username }}</h2>
+        <p class="text-secondary">{{ user.email }}</p>
+      </div>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Profile Info</legend>
+              {{ u_form|crispy }}
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submit">Update</button>
+          </div>
+     </form>
+  </div>
+
+
+{% endblock content %}

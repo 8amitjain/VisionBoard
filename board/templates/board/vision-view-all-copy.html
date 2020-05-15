@@ -1,0 +1,45 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href='{% static "board/main.css" %}'>
+<style>
+        .section-margin{
+            margin: 5%;
+            padding: 2em;
+        }
+
+        @media only screen and (min-width: 1250px) {
+          .section-margin{
+            margin: 5em 15%;
+            padding: 2em;
+            font-size: 1.2em;
+        }
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="section-margin">
+    <h1>Vision</h1>
+    {% for photos in vision %}
+    <div class="container">
+        <img src="{{photos.image.url}}" alt="Vision" class="image" style="padding-bottom:2em;">
+            <div class="middle">
+
+                <div class="text">
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'vision-view' photos.id %}">{{ photos.title}}</a>
+                </div>
+
+                    <br>
+
+                <div class="text">
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'basic_upload' photos.id %}">Edit</a>
+                </div>
+
+            </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock content %}

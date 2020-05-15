@@ -1,0 +1,56 @@
+{% load static %}
+{% block css %}
+
+<link rel="stylesheet" type="text/css" href='{% static "board/vision-board-display.css" %}'>
+<link rel="stylesheet" href='{% static "board/all.min.css" %}'>
+<link rel="stylesheet" href='{% static "board/all.css" %}'>
+
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Board</title>
+</head>
+<body>
+{% ifequal len_photo 0 %}
+<div class="back_btn2" >
+    <h1 class="no_image">No Images Added, Add Images from <a href="{% url 'basic_upload' pk %}" >Here <i class="fas fa-link" aria-hidden="true"></i></a> </h1>
+</div>
+{% else %}
+<div class="section-margin">
+        <div class="row">
+            <div>
+        {% for photos in photo %}
+            {% if forloop.counter0|divisibleby:num_rows%}
+              </div>
+              <div class="column">
+                  <img src="{{ photos.file.url }}" alt="image-here">
+
+
+                {% else %}
+                <img src="{{ photos.file.url }}" alt="image-here">
+            {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+      </div>
+<!--<main>-->
+<!--    {% for photos in photo %}-->
+<!--            <div class="card-mine-here">-->
+<!--                <img src="{{ photos.file.url }}" alt="">-->
+
+<!--            </div>-->
+<!--    {% endfor %}-->
+<!--</main>-->
+{% endifequal %}
+
+    <br>
+<div class="back_btn">
+        <a href="{% url 'vision-view-all' %}" >Back</a>
+</div>
+
+</body>
+</html>
+
