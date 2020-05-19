@@ -23,7 +23,7 @@ def register(request):
 def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
-      
+
         if u_form.is_valid():
             u_form.save()
             messages.success(request, f'Details Updated!')

@@ -29,7 +29,6 @@ class BasicUploadView(LoginRequiredMixin, View):
         form = PhotoForm(self.request.POST, self.request.FILES)
         if form.is_valid():
             form.instance.vision_id = pk
-
             photo = form.save()
             data = {'is_valid': True, 'name': photo.file.name, 'url': photo.file.url}
         else:
