@@ -21,7 +21,7 @@ SECRET_KEY = Secret_key
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', ]
 
 
 # Application definition
