@@ -77,28 +77,28 @@ WSGI_APPLICATION = 'VissionBoard.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-             'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
-        },
-    },
-}
+# LOGGING = {
+# #     'version': 1,
+# #     'disable_existing_loggers': False,
+# #     'handlers': {
+# #         'console': {
+# #             'class': 'logging.StreamHandler',
+# #         },
+# #     },
+# #     'loggers': {
+# #         'django': {
+# #             'handlers': ['console'],
+# #              'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+# #         },
+# #     },
+# # }
 
 
 # Password validation
