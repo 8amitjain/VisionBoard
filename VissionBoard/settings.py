@@ -21,7 +21,7 @@ SECRET_KEY = Secret_key
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'vision--board.herokuapp.com', 'https://vision--board.herokuapp.com/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
