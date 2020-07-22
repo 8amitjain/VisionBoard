@@ -21,7 +21,7 @@ SECRET_KEY = Secret_key
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1:8000/', 'vision--board.herokuapp.com/']
 
 
 # Application definition
@@ -139,6 +139,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "board/static"),
+    os.path.join(BASE_DIR, "home/static"),
+
+]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
