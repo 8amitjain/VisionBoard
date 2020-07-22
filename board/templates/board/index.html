@@ -62,23 +62,5 @@
     {% endfor %}
 </main>
 
-<!--<div class="show-mobile">-->
-<!--{% for photo in photos %}-->
-<!--    {% if photo.vision_id == pk %}-->
-<!--        <div class="modal-content-mobile">-->
-<!--            <div class="vb-content">-->
-<!--                <img src="{{ photo.file.url }}" alt="">-->
-<!--            </div>-->
-
-<!--            <div class="content">-->
-<!--                <div class="bottom-text">-->
-<!--                    <a href="{% url 'vision-image-delete' photo.id %}" class="link-info">Delete Image</a>-->
-<!--                    <a href="{% url 'vision-image-delete' photo.id %}"><span class="far fa-trash-alt"></span></a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--         </div>-->
-<!--    {% endif %}-->
-<!--{% endfor %}-->
-<!--</div>-->
 {% endblock %}
 
