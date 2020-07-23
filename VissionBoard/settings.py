@@ -22,14 +22,14 @@ SECRET_KEY = Secret_key
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['vision--board.herokuapp.com']
+ALLOWED_HOSTS = ['vision--board.herokuapp.com', 'http://127.0.0.1:8000/']
 # https://vision--board.herokuapp.com/
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    # 'whitenoise.runserver_nostatic',
+    'whitenoise.runserver_nostatic',
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
     'board.apps.BoardConfig',
@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'VissionBoard.urls'
@@ -86,22 +86,21 @@ DATABASES = {
     }
 }
 
-# LOGGING = {
-# #     'version': 1,
-# #     'disable_existing_loggers': False,
-# #     'handlers': {
-# #         'console': {
-# #             'class': 'logging.StreamHandler',
-# #         },
-# #     },
-# #     'loggers': {
-# #         'django': {
-# #             'handlers': ['console'],
-# #              'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
-# #         },
-# #     },
-# # }
-
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+        },
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -135,15 +134,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "board/static"),
-#     os.path.join(BASE_DIR, "home/static")
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "board/static"),
+    os.path.join(BASE_DIR, "home/static")
+]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
