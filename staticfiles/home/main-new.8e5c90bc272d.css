@@ -1,0 +1,943 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700&display=swap');
+
+
+:root{
+    --redshade-color: #cec1c1;
+}
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: visible;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    z-index: -1;
+}
+
+/* section top */
+.hero-bg{
+    background: #00B9B9;
+    /* can be dark cyan */
+    color: #fff;
+    text-align: center;
+    padding-bottom: 6em;
+
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: whitesmoke;
+    padding: 2em 0;
+    margin-left: -1em;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+header a{
+    color:lightslategray;
+}
+
+.menu{
+    width: 23px;
+}
+
+.logo a:hover {
+    color: black;
+}
+nav ul{
+    position: fixed;
+    width: 60%;
+    top: 0;
+    right: 0;
+    text-align: left;
+    background-color: #d8d8d8;
+    height: 100%;
+    z-index: 2;
+    padding-top: 3em;
+}
+nav ul li a {
+    color:white;
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    padding: .5em 2em;
+    background-color: rgb(180, 180, 180);
+}
+nav ul li a:hover{
+    color: black;
+}
+
+.exit-btn{
+    
+    margin-bottom: 1em;
+    margin-top: -1.3em;
+    margin-right: 2em;
+    text-align: right;
+    cursor: pointer;
+}
+
+#nav{
+    display: none;
+}
+
+.right-col{
+    display: none;
+}
+
+.content{
+    padding-top: 11em;
+}
+div .content h1 span {
+    display: block;
+}
+
+.content h1 {
+    font-size: 1.7em ;
+    position: relative;
+    padding-bottom: 1em;
+
+}
+
+.content p {
+    padding: 2.5em 0 .8em 0;
+    color: azure;
+
+}
+
+.content h1::before {
+    position: absolute;
+    content: ' ';
+    background:wheat;
+    width: 4em;
+    height: 0.1em;
+    bottom: 0;
+    margin-left: -2.2em;
+    margin-bottom: .5em;
+}
+
+.content a span{
+    color: slategray;    
+}
+.content button {
+    text-transform: uppercase;
+    background-color: wheat;
+    /* #f2c900 yellow  #cec1c1 grey*/
+    border: none;
+    width: 19em;
+    height: 4em;
+    border-radius: 2em;
+}
+
+.content button:hover {
+    background-color: rgb(245, 214, 161);
+    /*  #d8d8d8 */
+    /* #eed453  yellow */ 
+    
+}
+
+.hero-bg a {
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+section {
+    margin: 0 1em ;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* section middle */
+
+
+section .middle{
+    margin: -1.5em 0;
+        
+}
+
+section .container-about{
+    background-color: #f8f8f8;
+    border-radius: 2em;
+}
+
+.container-about h2 {
+    padding: 2em 1.5em 0 1.5em ;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+}
+.container-about h2::before {
+    position: absolute;
+    content: ' ';
+    background: wheat;
+    width: 5em;
+    height: 0.1em;
+    bottom: 0;
+    margin-left: 0.8em;
+    margin-bottom: -.5em;
+    border-radius: 2em;
+}
+.container-about p {
+    text-align: justify;
+    padding: 1em 2.2em ;
+    line-height: 1.8em;
+}
+
+div .center-btn{
+    padding: 0.5em 0 3.5em 0em;
+    margin-bottom: 2em;
+    text-align: center;
+
+}
+.container-about button { 
+    text-transform: uppercase;
+    background-color: wheat;
+    /* #f2c900 yellow */
+    border: none;
+    width: 11em;
+    height: 4em;
+    border-radius: 2em;
+
+}
+
+.container-about button:hover {
+    background-color:rgb(245, 214, 161);
+   
+}
+
+.container-about a {
+    color: lightslategray;
+    text-decoration: none;
+    font-size: 1.2em;
+
+}
+/* middle-2 */
+section .middle-2{
+    margin: auto;
+}
+/* above vision board */
+.middle-2 img {
+    width: 100%;
+    border-radius: 2em;
+}
+
+.block { 
+    background-color: rgb(245, 214, 161);
+    margin: .5em -1em;
+    color: white;
+}
+
+.block h2 {
+    padding: 1em 1em;
+    font-weight: 600;
+    font-size: 1.7em;
+    
+}
+
+
+.block a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 1.2em;
+
+}
+
+.block button { 
+    text-transform: uppercase;
+    background-color: #2bcece;
+    /* #f2c900 yellow */
+    border: none;
+    width: 12em;
+    height: 3.7em;
+    border-radius: 2em;
+}
+
+.block button:hover {
+    background-color: #0EC0C0; 
+}
+.center-btn-2 {
+    padding: 2em 0 2em 0em;
+    margin-top: -3em;
+    text-align: center;
+}
+
+/* bottom */
+
+.bottom{
+    background-color: #f8f8f8;
+    margin-top: 1.8em;
+    padding: 2em 1em 2em 0.4;
+    border-radius: 2em;
+}
+
+.bottom h2 {
+    text-align: center;
+    padding: 1.5em 1em 0 1.3em;
+    font-weight: 600;
+    position: relative;
+    font-size: 1.4em; 
+}
+
+.bottom .row{
+    padding-top: 1em;
+}
+
+.bottom h2::before {
+    position: absolute;
+    content: ' ';
+    background: wheat;
+    width: 4em;
+    height: 0.1em;
+    bottom: 0;
+    margin-left: 4em;
+    margin-bottom: -.5em;
+    border-radius: 2em;
+}
+
+.bottom p {
+    text-align: justify;
+    padding: .5em 2.2em ;
+    line-height: 1.8em;
+}
+/* footer */
+
+
+.footer .end-block { 
+    background-color: rgb(245, 214, 161);
+    padding: 2em 2em;
+    margin: .5em -1em;
+    color: white;
+}
+
+.footer .end-block h3 {
+    font-size: 1.5em;
+    padding: 0 0.8em;
+}
+
+.footer .end-block p {
+    text-align: justify;
+    font-size: 1.1em;
+    padding: 0 1em;
+}
+
+.footer .end-block a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.footer .end-block img{
+    width: 2em;
+}
+.footer .end-block .row {
+    display: inline-flex;
+    padding-left: 1em;
+}
+
+.footer .end-block .column {
+    padding: 1em 2em 0 0.5em; 
+    /* check padding changed last from 2 to 0 */
+    margin-right: 1em;
+    margin-left: -3%;
+
+}
+
+/* Bootstrap css */
+
+.container {
+    position: relative;
+    padding: 50px 50px;
+
+  }
+
+
+  .image {
+    opacity: 1;
+    display: block;
+
+    transition: .5s ease;
+    backface-visibility: hidden;
+
+  }
+
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+
+  }
+
+  .container:hover .image {
+    opacity: 0.3;
+  }
+
+  .container:hover .middle {
+    opacity: 1;
+  }
+
+  .text {
+    color: white;
+    font-size: 16px;
+
+  }
+
+
+  /* Bootstrap css end */
+
+@media only screen and (min-width: 300px){
+    .footer .end-block .column {
+        padding: 1em 2em 0 0.5em; 
+        margin-right: 1em;
+        margin-left: -6%;
+    }
+
+    .bottom h2 {
+        text-align: center;
+        padding-top: 1.5em;
+        font-weight: 600;
+        position: relative;
+        font-size: 1.2em; 
+    }
+
+    .bottom h2::before {
+        position: absolute;
+        content: ' ';
+        background: wheat;
+        width: 4em;
+        height: 0.1em;
+        bottom: 0;
+        margin-left: 3em;
+        margin-bottom: -.5em;
+        border-radius: 2em;
+    }
+
+}
+
+@media only screen and (min-width: 350px){
+    
+    .bottom h2 {
+        text-align: center;
+        padding-top: 1.5em;
+        font-weight: 600;
+        position: relative;
+        font-size: 1.2em; 
+    }
+
+    .bottom h2::before {
+        position: absolute;
+        content: ' ';
+        background: wheat;
+        width: 4em;
+        height: 0.1em;
+        bottom: 0;
+        margin-left: 4em;
+        margin-bottom: -.5em;
+        border-radius: 2em;
+    }
+
+    .footer .end-block h3 {
+        font-size: 1.7em;
+        padding: 0 0.8em;
+    }
+
+    .footer .end-block .column {
+        padding: 1em 2em 0em 2em; 
+        /* check padding changed last from 2 to 0 */
+        margin-right: 1em;
+        margin-left: -7%;
+    }
+    
+
+}
+
+/* @media only screen and (min-width: 350px) and (min-height: 700px){
+    
+    .footer .end-block .column {
+        padding: 1em 2em 7em 2em; 
+        margin-right: 1em;
+        margin-left: -7%;
+    }
+} */  
+/* for i ippone x  */
+
+
+@media only screen and (min-width: 400px){
+    .bottom h2 {
+        text-align: center;
+        padding: 1.5em .7em 0 1.3em;
+        font-weight: 600;
+        position: relative;
+        font-size: 1.3em; 
+    }
+
+    .bottom h2::before {
+        position: absolute;
+        content: ' ';
+        background: wheat;
+        width: 4em;
+        height: 0.1em;
+        bottom: 0;
+        margin-left: 4em;
+        margin-bottom: -.5em;
+        border-radius: 2em;
+    }
+    
+    p{
+        font-size: 1.1em;
+    }
+    h2{
+        font-size: 1.8em;
+    }
+    .bottom h2 {
+        text-align: center;
+        padding: 1.5em 1em 0 1.3em;
+        font-weight: 600;
+        position: relative;
+        font-size: 1.5em; 
+    }
+
+    .block h2 {
+        padding: 1em 1em;
+        font-weight: 600;
+        font-size: 1.8em;
+    }
+
+    .footer .end-block h3 {
+        font-size: 1.8em;
+        padding: 0 0.6em;
+        
+    }
+
+    .footer .end-block .column {
+        padding: 1em 2em 2em 2em; 
+        /* check padding changed last from 2 to 0 */
+        margin-right: 1em;
+        margin-left: -6%;
+    }
+    
+}
+
+@media only screen and (min-width: 700px) {
+    
+    header .logo a{
+        font-size: 1.7em;
+    }
+
+    .hide-desktop img{
+        width: 28px;
+    }
+    .top .content{
+        margin: 6%;
+        margin-top: -0.2em
+    }
+    .top h1{
+        font-size: 2em;
+        
+    }
+
+    .top p{
+        font-size: 1.3em;
+    }
+
+    p{
+        font-size: 1.2em;
+    }
+
+    h2{
+        font-size: 1.8em;
+    }
+
+    .bottom h2{
+        font-size: 1.8em;
+    }
+
+    .footer .end-block p {
+        font-size: 1.1em;
+        
+    }
+
+    .block h2 {
+        padding: 1em 1em;
+        font-weight: 600;
+        font-size: 2em;
+    }
+
+    button{
+        font-size: 0.8em;
+    }
+
+}
+
+@media only screen and (min-width: 850px) {
+
+    header .logo a{
+        font-size: 1.3em;
+    }
+    .show-desktop a{
+        font-size: 1.3em;
+    }
+
+    .top .content{
+        margin: 8%;
+        margin-top: -0.2em
+     }
+     #nav{
+        display: block;
+    }
+
+    .hide-desktop {
+        display: none;
+    }
+
+    .show-desktop {
+        display: block;
+    }
+
+    nav ul {
+        position: inherit;
+        width: auto;
+        background: none;
+        height: auto;
+        display: flex;
+        padding-top: .5em; /* also change .logo's padding */
+        padding-bottom: 1em;
+        padding-right: 3.5em;
+    }
+
+    .logo{
+        padding-top: .5em;
+    }
+
+    nav ul li a{
+        background-color: inherit;
+        text-align: right;
+        padding: 0 2em;
+        color:  lightslategray;
+    }
+
+    header a:hover{
+        color: black;
+    }
+
+    .top h1{
+        font-size: 2.2em;
+        
+    }
+
+    .top p{
+        font-size: 1.5em;
+    }
+
+    p{
+        font-size: 1.4em;
+    }
+
+    h2{
+        font-size: 2em;
+    }
+
+    .bottom h2{
+        font-size: 2em;
+    }
+
+    .footer .end-block p {
+        font-size: 1.3em;   
+    }
+    .footer .end-block h3 {
+        font-size: 1.9em;
+        
+    }
+
+    .block h2 {
+        padding: 1em 1em;
+        font-weight: 600;
+        font-size: 2.2em;
+    }
+
+    button{
+        font-size: 1em;
+    }
+
+}
+
+/* @media only screen and (min-width: 950px) {
+    
+    header .logo a{
+        font-size: 1.4em;
+    }
+    .show-desktop a{
+        font-size: 1.4em;
+    }
+
+    .top .content{
+        margin: 9%;
+    }
+
+    .top h1{
+        font-size: 2.5em;
+        
+    }
+
+    .top p{
+        font-size: 1.6em;
+    }
+
+    p{
+        font-size: 1.5em;
+    }
+
+    h2{
+        font-size: 2.1em;
+    }
+
+    .bottom h2{
+        font-size: 2.1em;
+    }
+
+    .footer .end-block p {
+        font-size: 1.5em;   
+    }
+    .footer .end-block h3 {
+        font-size: 2em;
+        
+    }
+
+    .block h2 {
+        padding: 1em 1em;
+        font-weight: 600;
+        font-size: 2.4em;
+    }
+
+    button{
+        font-size: 1.2em;
+    }
+
+} */
+/* 1024 done */
+@media only screen and (min-width: 1024px) {
+    
+    header .logo a{
+        font-size: 1.4em;
+    }
+    .show-desktop a{
+        font-size: 1.4em;
+    }
+    .top .content{
+        margin: 10%;
+        margin-top: -1em;
+    }
+
+    .top h1{
+        padding-top: 2em;
+        font-size: 2.4em;
+        
+    }
+
+    .top p{
+        font-size: 1.6em;
+    }
+
+    p{
+        font-size: 1.4em;
+    }
+
+    h2{
+        font-size: 2.2em;
+    }
+
+    .bottom h2{
+        font-size: 2.2em;
+    }
+
+    .footer .end-block p {
+        font-size: 1.4em;   
+    }
+    .footer .end-block h3 {
+        font-size: 2.0em;
+        
+    }
+
+    .block h2 {
+        padding: 1em 1em;
+        font-weight: 600;
+        font-size: 2.4em;
+        text-align: center;
+
+    }
+
+    button{
+        font-size: 1.2em;
+    }
+
+}
+
+@media only screen and (min-width: 1400px) {
+    
+    header .logo a{
+        font-size: 1.6em;
+    }
+    .show-desktop a{
+        font-size: 1.6em;
+    }
+
+    .top .content{
+        margin: 10%;
+        margin-top: -1em;
+    }
+
+    .top h1{
+        padding-top: 2em;
+        font-size: 2.4em;
+        
+    }
+
+    .top p{
+        font-size: 1.6em;
+    }
+
+    p{
+        font-size: 1.4em;
+    }
+
+    h2{
+        font-size: 2.2em;
+    }
+
+    .bottom h2{
+        font-size: 2.2em;
+    }
+
+    .footer .end-block p {
+        font-size: 1.4em;   
+    }
+    .footer .end-block h3 {
+        font-size: 2.0em;
+        
+    }
+
+    .block h2 {
+        padding: 1em 1em;
+        font-weight: 600;
+        font-size: 2.4em;
+        text-align: center;
+
+    }
+
+    button{
+        font-size: 1.2em;
+    }
+
+    /* .right-col{
+        padding-top: 5em;
+        display: block;
+
+    }
+
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    } */
+
+    .middle-2 .parent img {
+        display: none;
+    }
+    .middle-2 .right-col{
+        display: block;
+    }
+    .right-col img{
+        width: 100%;
+        border-radius: 2em;
+    }
+}
+
+@media only screen and (min-width: 1900px) {
+    
+    .middle, .bottom{
+        margin: 0 1.5em;
+    }
+    .middle-2 .right-col {
+        margin: 0 0.5em;
+    }
+    header .logo a{
+        font-size: 1.8em;
+    }
+    .show-desktop a{
+        font-size: 1.8em;
+    }
+
+    .top .content{
+        margin: 10%;
+        margin-top: -1em;
+    }
+
+    .top h1{
+        padding-top: 3em;
+        font-size: 3em;
+        
+    }
+
+    .top p{
+        font-size: 1.7em;
+    }
+
+    p{
+        font-size: 1.6em;
+    }
+
+    h2{
+        font-size: 2.5em;
+    }
+
+    .bottom h2{
+        font-size: 2.4em;
+    }
+
+    .footer .end-block p {
+        font-size: 1.6em;   
+    }
+    .footer .end-block h3 {
+        font-size: 2.2em;
+        
+    }
+
+    .block h2 {
+        padding: 1em 1em;
+        font-weight: 600;
+        font-size: 2.6em;
+        text-align: center;
+
+    }
+
+    button{
+        font-size: 1.2em;
+    }
+
+
+    .middle-2 .parent img {
+        display: none;
+    }
+    .middle-2 .right-col{
+        display: block;
+    }
+    .right-col img{
+        width: 100%;
+        border-radius: 2em;
+    }
+}

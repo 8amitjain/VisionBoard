@@ -142,7 +142,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "board/static"),
-    os.path.join(BASE_DIR, "home/static"),
+    os.path.join(BASE_DIR, "home/static")
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
