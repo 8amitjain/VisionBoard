@@ -22,7 +22,7 @@ SECRET_KEY = Secret_key
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['vision--board.herokuapp.com', 'http://127.0.0.1:8000/']
+ALLOWED_HOSTS = ['*']
 # https://vision--board.herokuapp.com/
 
 
