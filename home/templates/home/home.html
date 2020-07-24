@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block css %}
-    <link rel="stylesheet" href='{% static "home\main-new.css" %}'>
+    <link rel="stylesheet" href='{% static "home/main-new.css" %}' />
 {% endblock %}
 
 {% block content %}
@@ -38,11 +38,11 @@
     <section class="middle-2">
 
         <div class="right-col">
-            <img src="{% static 'home\Images\a2.png' %}" alt="Vision">
+            <img src="{% static 'home/images/2.PNG' %}" alt="Vision" />
         </div>
 
         <div class="parent">
-            <img src="{% static 'home\Images\mobile.png' %}" alt="Vision Board">
+            <img src="{% static 'home/images/mobile.PNG' %}" alt="Vision Board" />
         </div>
 
         <div class="block">
@@ -51,7 +51,7 @@
                 <button><a href="{% url 'users-login' %}">Get started!</a></button>
             </div>
         </div>
-
+        <p></p>
     </section>
 
     <section class="bottom">
@@ -79,17 +79,16 @@
 
             <div class="row">
                 <div class="column">
-                    <a href="mailto:8amitjain@gmail.com"><img src="{% static 'home\icons\envelope-regular.svg' %}" alt="logo"></a>
+                    <a href="mailto:8amitjain@gmail.com"><img src="{% static 'home/icons/envelope-regular.svg' %}" alt="logo"></a>
                 </div>
 
                 <div class="column">
-                    <a href="https://www.instagram.com/amitjain018/"><img src="{% static 'home\icons\instagram-brands.svg' %}" alt="logo"></a>
+                    <a href="https://www.instagram.com/amitjain018/"><img src="{% static 'home/icons/instagram-brands.svg' %}" alt="logo"></a>
                 </div>
 
                 <div class="column">
-                    <a href="https://www.facebook.com/profile.php?id=100008211617241"><img src="{% static 'home\icons\facebook-brands.svg' %}" alt="logo"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100008211617241"><img src="{% static 'home/icons/facebook-brands.svg' %}" alt="logo"></a>
                 </div>
-
             </div>
 
         </div>

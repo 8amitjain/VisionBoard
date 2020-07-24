@@ -8,7 +8,7 @@
     <title>Vision Board</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href='{% static "home\main-new.css" %}'>
+    <link rel="stylesheet" href='{% static "home/main-new.css" %}'>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     {% block css %}{% endblock %}
 </head>
@@ -24,20 +24,20 @@
                 <nav class="header">
                     <div class="hide-desktop">
                         <a onclick="openNav()">
-                            <img src="{% static 'home\icons\bars-solid.svg' %}" alt="menu-here" width="16" class="menu">
+                            <img src="{% static 'home/icons/bars-solid.svg' %}" alt="menu-here" width="16" class="menu">
                         </a>
                     </div>
 
                     <div class="show-desktop" id="nav">
                         <ul>
                             {% if user.is_authenticated %}
-                                <li><a onclick="closeNav()" class="exit-btn hide-desktop"><img src="{% static 'home\icons\times-solid.svg' %}" alt="X" width="25px"></a></li>
+                                <li><a onclick="closeNav()" class="exit-btn hide-desktop"><img src="{% static 'home/icons/times-solid.svg' %}" alt="X" width="25px"></a></li>
 
                                 <li><a href="{% url 'users-profile' %}">Profile</a></li>
                                 <li><a href="{% url 'vision-create' %}">Create Vision Board</a></li>
                                 <li><a href="{% url 'users-logout' %}">Logout</a></li>
                             {% else %}
-                                <li><a onclick="closeNav()" class="exit-btn hide-desktop"><img src="{% static 'home\icons\times-solid.svg' %}" alt="X" width="25px"></a></li>
+                                <li><a onclick="closeNav()" class="exit-btn hide-desktop"><img src="{% static 'home/icons/times-solid.svg' %}" alt="X" width="25px"></a></li>
 <!--                            <li><a onclick="closeNav()" class="exit-btn hide-desktop" style="font-size: 3em; background:none;">&times;</a></li>-->
                                 <li><a href="{% url 'users-login' %}">Create Your Vision Board Now!</a></li> <!-- add user redirect to login page-->
 
