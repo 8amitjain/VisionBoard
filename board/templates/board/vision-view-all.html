@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+<!--    <link rel="stylesheet" href="main.css">-->
     <title>Vision Board</title>
 </head>
 <body>
@@ -22,11 +22,12 @@
             <a href="/" style="text-decoration:none; color:black; font-size:2em; margin-left:5%;">Back</a>
         <br>
     </div>
+
 {% ifnotequal len_vision 5 %}
     <div class="container-mine">
         {% for photos in vision %}
             <div class="card-mine">
-                <a href="{% url 'vision-view' photos.id %}"> <img src="{{photos.image.url}}" class="inner-img"> </a>
+                <a href="{% url 'vision-view' photos.id %}"> <img src="{{ photos.image.url}}" class="inner-img"> </a>
                     <div class="card__head">
                         <div class="right-col">
                             <a href="{% url 'popup-detail-view' photos.id %}"><img src="{% static 'board/icons/ellipsis-h-solid.svg' %}"></a>
@@ -34,7 +35,7 @@
                     <div class="left-col">{{ photos.title}}</div>
                 </div>
             </div>
-            {% endfor %}
+        {% endfor %}
 
             {% for x in 012|make_list %}
 
@@ -68,6 +69,7 @@
             {% endfor %}
         </div>
 {% endifnotequal %}
+
 <div class="mobile">
     {% for photos in vision %}
 
@@ -77,7 +79,7 @@
 
         <div class="vb-content-mobile">
             <a href="{% url 'vision-view' photos.id %}" class="link-info"><h2 class="name-main-mobile">{{ photos.title}}</h2></a>
-            <a href="{% url 'vision-view' photos.id %}"> <img src="{{photos.image.url}}"></a>
+            <a href="{% url 'vision-view' photos.id %}"> <img src="{{photos.image.url}}" /></a>
 
         </div>
 
@@ -91,7 +93,7 @@
             </div>
                 <hr>
             <div>
-                <a href="{% url '{% url 'vision-delete' photos.id %}" class="link-danger">Delete Vision Board</a>
+                <a href="{% url 'vision-delete' photos.id %}" class="link-danger">Delete Vision Board</a>
             </div>
                 <hr>
         </div>
@@ -102,9 +104,11 @@
 
 </div>
 
-{% endblock content %}
+
 </body>
 </html>
 
+
+{% endblock content %}
 
 

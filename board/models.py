@@ -2,14 +2,14 @@ from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
 from django.urls import reverse
-
+import os
 
 class Vision(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     content = models.TextField(null=True, blank=True)
     image = models.ImageField(
-        upload_to="vision_profile",
+        upload_to="vision_profile/",
         editable=True,
         help_text="Profile Picture",
         verbose_name="Profile Picture",

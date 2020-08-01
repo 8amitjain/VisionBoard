@@ -14,6 +14,8 @@ urlpatterns = [
     path('vision/<int:pk>/image/delete/', views.VisionImageDeleteView.as_view(), name='vision-image-delete'),
 
 ]
+# MEDIA_URL = '\media\\'
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

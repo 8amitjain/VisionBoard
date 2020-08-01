@@ -22,7 +22,7 @@ SECRET_KEY = Secret_key
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['locahost', 'vision--board.herokuapp.com']
 # https://vision--board.herokuapp.com/
 
 
@@ -149,13 +149,17 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "board\static\\"),
     os.path.join(BASE_DIR, "home\static\\")
 ]
-print(STATICFILES_DIRS)
-print(STATIC_URL)
-print(STATIC_ROOT)
+# print(STATICFILES_DIRS)
+# print(STATIC_URL)
+# print(STATIC_ROOT)
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 MEDIA_URL = '/media/'
+#
+# print(MEDIA_ROOT)
+# print(MEDIA_URL)
 
 LOGIN_REDIRECT_URL = 'home-home'
 LOGIN_URL = 'users-login'
