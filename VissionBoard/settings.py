@@ -29,18 +29,18 @@ ALLOWED_HOSTS = ['locahost', 'vision--board.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
+    'django.contrib.staticfiles',
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
     'board.apps.BoardConfig',
     'crispy_forms',
 
-    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'rest_framework',
 ]
 
@@ -66,6 +66,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.media',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -137,29 +138,29 @@ USE_L10N = True
 USE_TZ = True
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# STATICFILES_STORAGE = 'whitenoise.django.gzipmanifeststaticfilesstorage'
 # 'whitenoise.django.gzipmanifeststaticfilesstorage'
 # 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles\\')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_URL = '\static\\'
-
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "board\static\\"),
-    os.path.join(BASE_DIR, "home\static\\")
+    os.path.join(BASE_DIR, "board/static/"),
+    os.path.join(BASE_DIR, "home/static/")
 ]
 # print(STATICFILES_DIRS)
 # print(STATIC_URL)
 # print(STATIC_ROOT)
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
-#
+MEDIA_ROOT = os.path.join(BASE_DIR + 'media')
+# .replace('/', '\\')
 # print(MEDIA_ROOT)
 # print(MEDIA_URL)
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'home-home'
 LOGIN_URL = 'users-login'

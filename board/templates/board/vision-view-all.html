@@ -22,12 +22,13 @@
             <a href="/" style="text-decoration:none; color:black; font-size:2em; margin-left:5%;">Back</a>
         <br>
     </div>
-
+    {{ vision_F }}
+  <img src="{{ vision_F.image.url }}">
 {% ifnotequal len_vision 5 %}
     <div class="container-mine">
         {% for photos in vision %}
             <div class="card-mine">
-                <a href="{% url 'vision-view' photos.id %}"> <img src="{{ photos.image.url}}" class="inner-img"> </a>
+                <a href="{% url 'vision-view' photos.id %}"> <img src="{{ photos.image.url }}" class="inner-img"> </a>
                     <div class="card__head">
                         <div class="right-col">
                             <a href="{% url 'popup-detail-view' photos.id %}"><img src="{% static 'board/icons/ellipsis-h-solid.svg' %}"></a>
@@ -58,7 +59,8 @@
         <div class="container-mine">
         {% for photos in vision %}
             <div class="card-mine">
-                <a href="{% url 'vision-view' photos.id %}"> <img src="{{photos.image.url}}" class="inner-img"> </a>
+                <img src="{{photos.image.url}}" class="inner-img" />
+                <a href="{% url 'vision-view' photos.id %}"> <img src="{{photos.image.url}}" class="inner-img" /> </a>
                     <div class="card__head">
                         <div class="right-col">
                             <a href="{% url 'popup-detail-view' photos.id %}"><img src="{% static 'board/icons/ellipsis-h-solid.svg' %}"></a>

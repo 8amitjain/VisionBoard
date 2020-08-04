@@ -52,10 +52,12 @@ class BasicUploadView(LoginRequiredMixin, View):
 @login_required
 def all_list_view(request):  # listing all vision boards
     vision = Vision.objects.filter(user=request.user)
+    vision_F = Vision.objects.filter(user=request.user).first()
     len_vision = len(vision)
     data = len_vision - 5
     context = {
         'vision': vision,
+        'vision_F': vision_F,
         'len_vision': len_vision,
         'data': data
     }
