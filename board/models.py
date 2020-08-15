@@ -27,8 +27,8 @@ class Vision(models.Model):
 
         img1 = Image.open(self.image.path)
 
-        if img1.height > 1000 or img1.width > 1000:
-            output_size = (1000, 1000)
+        if img1.height > 750 or img1.width > 750:
+            output_size = (750, 750)
             img1 = img1.resize(output_size)
             img1.save(self.image.path)
 
