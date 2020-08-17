@@ -81,11 +81,16 @@ WSGI_APPLICATION = 'VissionBoard.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "visionboard",
+        "USER": "postgres",
+        "PASSWORD": "amitjain",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
+
 
 LOGGING = {
     'version': 1,
@@ -151,15 +156,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "board/static/").replace('\\', '/'),
     os.path.join(BASE_DIR, "home/static/").replace('\\', '/')
 ]
-print(STATICFILES_DIRS)
-print(STATIC_URL)
-print(STATIC_ROOT)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR + '/media/').replace('\\', '/')
 # .replace('/', '\\')
-print(MEDIA_ROOT)
-print(MEDIA_URL)
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'home-home'
