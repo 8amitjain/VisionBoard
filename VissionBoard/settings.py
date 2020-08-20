@@ -12,15 +12,17 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import django_heroku
+import boto3
+from botocore.client import Config
+from .data import Secret_key, Email, Email_Pass, Postgrey_Pass, AWS_ACCESS_KEY, AWS_SECRET_ACCESS, AWS_STORAGE_BUCKET
 
-from .data import Secret_key, Email, Email_Pass
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = Secret_key
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['locahost', 'vision--board.herokuapp.com', '13.233.250.240']
 # https://vision--board.herokuapp.com/
@@ -35,6 +37,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'board.apps.BoardConfig',
     'crispy_forms',
+    'storages',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -85,7 +88,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "visionboard",
         "USER": "postgres",
-        "PASSWORD": "amitjain",
+        "PASSWORD": Postgrey_Pass,
         "HOST": "localhost",
         "PORT": "5432",
     }
@@ -171,7 +174,24 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = 'visionboard.help@gmail.com'
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = Email
+EMAIL_HOST_PASSWORD = Email_Pass
+
+AWS_ACCESS_KEY_ID = AWS_ACCESS_KEY
+AWS_SECRET_ACCESS_KEY = AWS_SECRET_ACCESS
+AWS_STORAGE_BUCKET_NAME = AWS_STORAGE_BUCKET
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+AWS_S3_REGION_NAME = "ap-south-1"
+# AWS_S3_HOST = "s3.ap-south-1.amazonaws.com"
+AWS_S3_SIGNATURE_VERSION = "s3v4"
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400'
+}
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 django_heroku.settings(locals())

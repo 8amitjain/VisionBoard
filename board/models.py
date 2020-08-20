@@ -22,15 +22,15 @@ class Vision(models.Model):
     def __str__(self):
         return self.title
 
-    def save(self):
-        super().save()
-
-        img1 = Image.open(self.image.path)
-
-        if img1.height > 750 or img1.width > 750:
-            output_size = (750, 750)
-            img1 = img1.resize(output_size)
-            img1.save(self.image.path)
+    # def save(self, *args, **kwargs):
+    # super().save(*args, **kwargs)
+    #
+    #     img1 = Image.open(self.image.path)
+    #
+    #     if img1.height > 750 or img1.width > 750:
+    #         output_size = (750, 750)
+    #         img1 = img1.resize(output_size)
+    #         img1.save(self.image.path)
 
     def get_absolute_url(self):
         return reverse('vision-view-all', kwargs={'username': self.user})
