@@ -6,10 +6,11 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('', include('users.urls')),
+    path('users/', include('users.urls')),
     path('', include('board.urls')),
+    path('users/login/accounts/', include('allauth.urls')),
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # if settings.DEBUG:
 #     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 #     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

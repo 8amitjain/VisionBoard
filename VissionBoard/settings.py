@@ -31,20 +31,30 @@ ALLOWED_HOSTS = ['locahost', 'vision--board.herokuapp.com', '13.233.250.240']
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',
-    'django.contrib.staticfiles',
-    'home.apps.HomeConfig',
-    'users.apps.UsersConfig',
-    'board.apps.BoardConfig',
-    'crispy_forms',
-    'storages',
-
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+
+    # Other Apps
+    'whitenoise.runserver_nostatic',
+    'django.contrib.staticfiles',
+    'crispy_forms',
+    'storages',
     'rest_framework',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+    'social_django',
+
+    # My Apps
+    'home.apps.HomeConfig',
+    'users.apps.UsersConfig',
+    'board.apps.BoardConfig',
 ]
 
 MIDDLEWARE = [
@@ -57,6 +67,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = (
+ 'django.contrib.auth.backends.ModelBackend',
+ 'allauth.account.auth_backends.AuthenticationBackend',
+ )
 
 ROOT_URLCONF = 'VissionBoard.urls'
 
@@ -72,6 +89,9 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect'
             ],
         },
     },
@@ -137,13 +157,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Calcutta'
 
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
+
+
+AUTH_USER_MODEL = 'users.User'
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -166,21 +190,30 @@ MEDIA_ROOT = os.path.join(BASE_DIR + '/media/').replace('\\', '/')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+
 LOGIN_REDIRECT_URL = 'home-home'
 LOGIN_URL = 'users-login'
+LOGOUT_URL = 'users-logout'
+
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_USERNAME_REQUIRED = False
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-
 EMAIL_HOST_USER = Email
 EMAIL_HOST_PASSWORD = Email_Pass
+
 
 AWS_ACCESS_KEY_ID = AWS_ACCESS_KEY
 AWS_SECRET_ACCESS_KEY = AWS_SECRET_ACCESS
 AWS_STORAGE_BUCKET_NAME = AWS_STORAGE_BUCKET
-
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 AWS_S3_REGION_NAME = "ap-south-1"

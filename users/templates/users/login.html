@@ -1,5 +1,6 @@
 {% extends "home/base.html" %}
 {% load crispy_forms_tags %}
+{% load socialaccount %}
 
 {% block css%}
 <style>
@@ -34,7 +35,6 @@
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Log In</button>
-
                 <small class="text-muted">
                     <a class="ml-2" href="{% url 'password_reset' %}">Forgot Password?</a>
                 </small>
@@ -46,6 +46,9 @@
             </small>
         </div>
     </div>
+<a href="{% provider_login_url 'google' %}"><button class="btn btn-danger">Login with Google</button></a>
+<a href="{% provider_login_url 'facebook' %}"><button class="btn btn-info">Login with Facebook</button></a>
+<br>
 {% endblock content %}
 
 
