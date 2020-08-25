@@ -18,7 +18,7 @@
             <header>
 
                 <div class="logo">
-                    <a href="{% url 'vision-view-all' %}">Vision Board</a>   <!--logo on-click homepage-->
+                    <a href="{% url 'home-home' %}">Vision Board</a>   <!--logo on-click homepage-->
                 </div>
 
                 <nav class="header">
@@ -33,8 +33,9 @@
                             {% if user.is_authenticated %}
                                 <li><a onclick="closeNav()" class="exit-btn hide-desktop"><img src="{% static 'home/icons/times-solid.svg' %}" alt="X" width="25px"></a></li>
 
-                                <li><a href="{% url 'users-profile' %}">Profile</a></li>
+                                <li><a href="{% url 'vision-view-all' %}">View Vision Board</a></li>
                                 <li><a href="{% url 'vision-create' %}">Create Vision Board</a></li>
+                                <li><a href="{% url 'users-profile' %}">Profile</a></li>
                                 <li><a href="{% url 'users-logout' %}">Logout</a></li>
                             {% else %}
                                 <li><a onclick="closeNav()" class="exit-btn hide-desktop"><img src="{% static 'home/icons/times-solid.svg' %}" alt="X" width="25px"></a></li>
@@ -51,6 +52,7 @@
                  </nav>
             </header>
         </section>
+<!--        <hr class="borderline">-->
     </div>
 
 

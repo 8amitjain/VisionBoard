@@ -1,12 +1,12 @@
 from django.db import models
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from PIL import Image
 from django.urls import reverse
 from django.conf import settings
 
 
 class Vision(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     content = models.TextField(null=True, blank=True)
     image = models.ImageField(

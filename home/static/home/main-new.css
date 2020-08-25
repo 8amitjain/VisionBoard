@@ -27,7 +27,8 @@ body {
     /* can be dark cyan */
     color: #fff;
     text-align: center;
-    padding-bottom: 6em;
+    padding-bottom: 6em;.
+
 
 }
 header {
@@ -40,7 +41,10 @@ header {
     margin-left: -1em;
     display: flex;
     justify-content: space-evenly;
+}
 
+hr .borderline{
+    border: 1em solid #00B9B9;
 }
 
 header a{
@@ -224,6 +228,7 @@ div .center-btn{
     font-size: 1.2em;
 
 }
+
 /* middle-2 */
 section .middle-2{
     margin: auto;

@@ -3,6 +3,7 @@ from django.views import View
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseForbidden
 
 from django.views.generic import (
     CreateView,
@@ -49,9 +50,12 @@ class BasicUploadView(LoginRequiredMixin, View):
 #             return True
 #         return False
 
-@login_required
+# @login_required
 def all_list_view(request):  # listing all vision boards
-    vision = Vision.objects.filter(user=request.user)
+    try:
+        vision = Vision.objects.filter(user=request.user)
+    except:
+        vision = []
     len_vision = len(vision)
     data = len_vision - 5
     context = {
@@ -82,19 +86,23 @@ def detail_view(request, pk):  # listing all vision boards
 @login_required
 # @user_passes_test(test_func)
 def vision_view(request, pk):  # listing all vision boards
-    photo = Photo.objects.filter(vision__id=pk)
+    vision = Vision.objects.get(id=pk)
+    if vision.user == request.user:
+        photo = Photo.objects.filter(vision__id=pk)
 
-    len_photo = len(photo)
-    num_rows = int(len_photo/3)
-    if num_rows == 0:
-        num_rows = 1
-    context = {
-        'photo': photo,
-        'pk': pk,
-        'len_photo': len_photo,
-        'num_rows': num_rows
-    }
-    return render(request, 'board/vision-view.html', context)
+        len_photo = len(photo)
+        num_rows = int(len_photo/3)
+        if num_rows == 0:
+            num_rows = 1
+        context = {
+            'photo': photo,
+            'pk': pk,
+            'len_photo': len_photo,
+            'num_rows': num_rows
+        }
+        return render(request, 'board/vision-view.html', context)
+    else:
+        return HttpResponseForbidden()
 
 
 # class VisionListView(LoginRequiredMixin, ListView):  # listing photos of a particular vision board

@@ -5,22 +5,23 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 class UserRegistrationFrom(UserCreationForm):
-    email = forms.EmailField()
-    first_name = forms.CharField(max_length=15)
-    last_name = forms.CharField(max_length=20)
+    # email = forms.EmailField()
+    # first_name = forms.CharField(max_length=15)
+    # last_name = forms.CharField(max_length=20)
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2']
+        fields = ['email', 'first_name', 'last_name', 'password1', 'password2']
+# username',
 
 
 class UserUpdateForm(forms.ModelForm):
-    email = forms.EmailField()
-    first_name = forms.CharField(max_length=15)
-    last_name = forms.CharField(max_length=20)
+    # email = forms.EmailField()
+    # first_name = forms.CharField(max_length=15)
+    # last_name = forms.CharField(max_length=20)
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'first_name', 'last_name']
-
+        fields = ['email', 'first_name', 'last_name']
+# 'username',
 

@@ -71,34 +71,39 @@
 {% endifnotequal %}
 
 <div class="mobile">
-    {% for photos in vision %}
+    {% ifequal len_vision 0 %}
+        <h2 style="margin-left:5%;">No Vission Board added, add Vision Board form <a href="{% url 'vision-create' %}">here</a></h2>
+    {% else %}
+        {% for photos in vision %}
 
-    <div class="modal-content-mobile">
+        <div class="modal-content-mobile">
 
-        <div class="container-grid-mobile"></div>
+            <div class="container-grid-mobile"></div>
 
-        <div class="vb-content-mobile">
-            <a href="{% url 'vision-view' photos.id %}" class="link-info"><h2 class="name-main-mobile">{{ photos.title}}</h2></a>
-            <a href="{% url 'vision-view' photos.id %}"> <img src="{{photos.image.url}}" /></a>
+            <div class="vb-content-mobile">
+                <a href="{% url 'vision-view' photos.id %}" class="link-info"><h2 class="name-main-mobile">{{ photos.title}}</h2></a>
+                <a href="{% url 'vision-view' photos.id %}"> <img src="{{photos.image.url}}" /></a>
 
+            </div>
+
+            <div class="content-mobile">
+                <div>
+                    <a href="{% url 'basic_upload' photos.id %}" class="link-info">Update Images</a>
+                </div>
+                    <hr>
+                <div>
+                    <a href="{% url 'vision-update' photos.id %}" class="link-info">Update Vision Board Profile </a>
+                </div>
+                    <hr>
+                <div>
+                    <a href="{% url 'vision-delete' photos.id %}" class="link-danger">Delete Vision Board</a>
+                </div>
+                    <hr>
+            </div>
         </div>
+        {% endfor %}
+    {% endifequal %}
 
-        <div class="content-mobile">
-            <div>
-                <a href="{% url 'basic_upload' photos.id %}" class="link-info">Update Images</a>
-            </div>
-                <hr>
-            <div>
-                <a href="{% url 'vision-update' photos.id %}" class="link-info">Update Vision Board Profile </a>
-            </div>
-                <hr>
-            <div>
-                <a href="{% url 'vision-delete' photos.id %}" class="link-danger">Delete Vision Board</a>
-            </div>
-                <hr>
-        </div>
-    </div>
-    {% endfor %}
     <br>
     <br>
 
