@@ -7,7 +7,9 @@ from. import views
 urlpatterns = [
     path('', views.home, name='home-home'),
     path('about/', views.about, name='home-about'),
+    path('faq/', views.faq, name='home-faq'),
     path('contact/', views.contact, name='home-contact'),
+    path('developer/', views.developer, name='home-developer'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

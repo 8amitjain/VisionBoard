@@ -24,7 +24,7 @@
             <h2 style="margin:-1.8em 0 1.2em 0;">Vision Board</h2>
             <p>A Vision Board is a visual representation of the things you want to manifest in your life.</p>
 
-            <p>The idea behind this is that when you surround yourself with images of your ideal life your life changes to match those images and those desires through the power of visualization Know more</p>
+            <p>The idea behind this is that when you surround yourself with images of your ideal life your life changes to match those images and those desires through the power of visualization.</p>
 
             <p>Vision Boards work by programming the part of the brain responsible for attention, the reticular activating system. By focusing your mind to the things you want in your life you are able to see new ways to achieve these things in reality.</p>
                         <!-- , An online Vision Board is a great way to make your goals a reality! -->
@@ -62,40 +62,42 @@
 
                 <p>Put your board somewhere you’ll see it regularly, like your phone screen saver or on social media. You can also print out your board and place it on your bedroom wall or stick it in front of your desk at work.</p>
 
-                <p>When you’re creating your personalised image, you’re prompted to put serious thought into what your goals actually are and which direction you want your life to take. If you are unsure of what you want from life then putting some thoughts is a good first step to correcting that. It helps give you focus and gives you the platform to start taking action</p>
+                <p>When you’re creating your personalised image, you’re prompted to put serious thought into what your goals actually are and which direction you want your life to take. If you are unsure of what you want from life then putting some thoughts is a good first step to correcting that. It helps give you focus and gives you the platform to start taking action.</p>
 
                 <p>Sometimes you need to grit your teeth and get a bit angry at yourself when you feel you’ve lost focus. Vision boards help you stay passionate and motivated. They are also sometimes known as both dream boards and action boards, which is fitting, as they give you the platform to dream big and to act decisively.</p>
             </div>
     </section>
 
     <div class="about-button-mine">
+        <button><a href="{% url 'home-about' %}">About Us</a></button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button><a href="{% url 'home-faq' %}">FAQ</a></button>&nbsp;&nbsp;&nbsp;&nbsp;
         <button><a href="{% url 'home-contact' %}">Contact Us</a></button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button><a href="{% url 'home-about' %}">About Us</a></button>
     </div>
 
      <section class="footer">
         <div class="end-block">
 
-            <!-- create a about the author/deveroper page -->
             <h3>Let's Get In Touch!</h3>
 
+
             <p>Drop us a line or catch up with us and other like minded individuals on social media!</p>
-
-            <div class="row-mine">
+            <div class="row-mine" style="margin-left:-1em;">
                 <div class="column">
-                    <a href="mailto:8amitjain@gmail.com"><img src="{% static 'home/icons/envelope-regular.svg' %}" alt="logo"></a>
+                    <a href="mailto:visionboard.help@gmail.com"><img src="{% static 'home/icons/envelope-regular.svg' %}" alt="logo"></a>
                 </div>
 
                 <div class="column">
-                    <a href="https://www.instagram.com/amitjain018/"><img src="{% static 'home/icons/instagram-brands.svg' %}" alt="logo"></a>
+                    <a href="https://www.instagram.com/macrocoders/"><img src="{% static 'home/icons/instagram-brands.svg' %}" alt="logo"></a>
                 </div>
 
                 <div class="column">
-                    <a href="https://www.facebook.com/profile.php?id=100008211617241"><img src="{% static 'home/icons/facebook-brands.svg' %}" alt="logo"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100054850531152"><img src="{% static 'home/icons/facebook-brands.svg' %}" alt="logo"></a>
                 </div>
+
             </div>
-
+            <button style="background-color:#0EC0C0;margin-left:1em;"><a href="{% url 'home-developer' %}">Meet the Developer!!</a></button>
         </div>
+
     </section>
 
 {% endblock content %}

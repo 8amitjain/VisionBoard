@@ -1,0 +1,64 @@
+{% extends "home/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block css%}
+<style>
+        .content-section{
+            margin: 5%;
+            padding: 2em;
+            border-radius: 2em;
+            border-style: solid;
+            border-color:#f8f8f8;
+        }
+        @media only screen and (min-width: 1250px) {
+          .content-section{
+            margin: 5em 15%;
+            padding: 2em;
+            border-radius: 2em;
+            border-style: solid;
+            border-color:#f8f8f8;
+            font-size: 1.2em;
+        }
+        }
+
+    </style>
+{% endblock%}
+
+{% block content %}
+    <div class="content-section">
+        <h1 class="uk-text-muted"><b>Who is the developer!!</b></h1>
+        <br>
+        <p>Hi, I am Amit Jain, I am currently a student and computer geek and I love Coding,
+            you can check my other project <a href="https://github.com/amitj-coder" style="text-decoration:none;">here</a>.
+        <br> <br>
+        <span style="margin-left:1em;">-Amit Jain</span>
+        <center>
+            <br> <br>
+            <h3>Connect with me!</h3>
+
+            <div class="footer">
+                <div class="end-block" style="background-color:#fff;margin-left:4.5em;">
+                    <div class="row-mine">
+                        <div class="column">
+                            <a href="mailto:8amitjain@gmail.com"><img src="{% static 'home/icons/envelope-regular.svg' %}" alt="logo"></a>
+                        </div>
+
+                        <div class="column">
+                            <a href="https://www.instagram.com/amitjain018/"><img src="{% static 'home/icons/instagram-brands.svg' %}" alt="logo"></a>
+                        </div>
+
+                        <div class="column">
+                            <a href="https://www.facebook.com/profile.php?id=100008211617241"><img src="{% static 'home/icons/facebook-brands.svg' %}" alt="logo"></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+       </center>
+
+
+    </div>
+{% endblock content %}
+
+
+

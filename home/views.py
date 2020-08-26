@@ -4,11 +4,11 @@ from .forms import ContactUsForm
 
 
 def home(request):
-    return render(request, 'home/home.html', {'title': 'Home'})
+    return render(request, 'home/home.html')
 
 
 def about(request):
-    return render(request, 'home/about.html', {'title': 'About Us'})
+    return render(request, 'home/about.html')
 
 
 def contact(request):
@@ -23,3 +23,12 @@ def contact(request):
         'form': form,
     }
     return render(request, 'home/contact.html', context)
+
+
+def faq(request):
+    return render(request, 'home/faq.html')
+
+
+def developer(request):
+    return render(request, 'home/developer.html')
+

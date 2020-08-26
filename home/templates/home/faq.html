@@ -1,0 +1,83 @@
+{% extends "home/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block css%}
+<style>
+        .content-section{
+            margin: 5%;
+            padding: 2em;
+            border-radius: 2em;
+            border-style: solid;
+            border-color:#f8f8f8;
+        }
+        @media only screen and (min-width: 1250px) {
+          .content-section{
+            margin: 5em 15%;
+            padding: 2em;
+            border-radius: 2em;
+            border-style: solid;
+            border-color:#f8f8f8;
+            font-size: 1.2em;
+        }
+        }
+
+    </style>
+{% endblock%}
+
+{% block content %}
+    <div class="content-section">
+        <div class="uk-card uk-card-default uk-card-body" style="border-radius:2em">
+            <h2 class="uk-text-light uk-text-default" style="font-family: cursive;" align="center"><b>Frequently Asked Questions</b></h2>
+            <h3 class="uk-text-light uk-text-meta" align="center">Here are some of the questions users ask us the most</h3>
+
+            <br>
+            <br>
+
+            <div>
+                <p><b>How many Vision Board am I able to Add?</b></p>
+                <p>Well, there is no such limit for Adding Vision Board. You can Make unlimited Vision Board in our website.</p>
+                <hr>
+
+                <p><b>How to do I update images to my Vision Board?</b></p>
+                <p>On Pc or Laptop at this <a href="{% url 'vision-view-all' %}">page</a> hover over the desired Vision Board, <i style="font-weight:600;"> click on 3 dots at bottom left near Vision Board's name </i>there you will see Update images.</p>
+                <p>On Mobile Devices at this <a href="{% url 'vision-view-all' %}">page</a> there you will see Update images.</p>
+                <hr>
+
+                <p><b>How to do I Delete my Vision Board?</b></p>
+                <p>On Pc or Laptop at this <a href="{% url 'vision-view-all' %}">page</a> hover over the desired Vision Board, <i style="font-weight:600;"> click on 3 dots at bottom left near Vision Board's name </i>there you will see Delete Vision Board.</p>
+                <p>On Mobile Devices at this <a href="{% url 'vision-view-all' %}">page</a> there you will see Delete Vision Board.</p>
+                <hr>
+
+                <p><b>How to do I update Vision Board's profile?</b></p>
+                <p>On Pc or Laptop at this <a href="{% url 'vision-view-all' %}">page</a> hover over the desired Vision Board, <i style="font-weight:600;"> click on 3 dots at bottom left near Vision Board's name </i>there you will see Update Vision Board's profile.</p>
+                <p>On Mobile Devices at this <a href="{% url 'vision-view-all' %}">page</a> there you will see Update Vision Board's profile.</p>
+                <hr>
+
+                <p><b>Is Vision Board free to use?</b></p>
+                <p>Yes, Vision Board is absolutely free to use!</p>
+                <hr>
+
+
+                <p><b>Is Vision Board available for mobile devices as an app?</b></p>
+                <p>Nope, Vision Board is not available on Android and iOS devices as an app but you can use it in thorough our website.</p>
+                <hr>
+
+                <p><b>Why do we need Vision Board?</b></p>
+                <p>The idea behind this is that when you surround yourself with images of your ideal life your life changes to match those images and those desires through the power of visualization.</p>
+                <hr>
+
+
+                <p><b>I have a technical problem, who do I email?</b></p>
+                <p>If you're facing any issues or even for feedback you can contact us on visionboard.help@gmail.com or from this page <a href="{% url 'home-contact' %}" style="text-decoration:none;">Contact Us</a></p>
+                <hr>
+
+                <br>
+                <center><p><b>Still, have a question or Feedback? <a href="mailto:visionboard.help@gmail.com" style="text-decoration:none;">Email us</a> </b></p></center>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+
