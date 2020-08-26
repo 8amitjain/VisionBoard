@@ -1,7 +1,7 @@
 {% extends "home/base.html" %}
 {% load crispy_forms_tags %}
 {% load socialaccount %}
-
+{% load static %}
 {% block css%}
 <style>
         .content-section{
@@ -40,8 +40,8 @@
                 </small>
             </div>
         </form>
-        <a href="{% provider_login_url 'google' %}"><button class="btn btn-danger">Login with Google</button></a>
-        <a href="{% provider_login_url 'facebook' %}"><button class="btn btn-info">Login with Facebook</button></a>
+        <a href="{% provider_login_url 'google' %}"><button class="btn btn-danger"><img src="{% static 'home/icons/google-brands.svg' %}" width="15" alt="">&nbsp; Login with Google</button></a>
+        <a href="{% provider_login_url 'facebook' %}"><button class="btn btn-info"><img src="{% static 'home/icons/facebook-f-brands.svg' %}" width="14" alt="">&nbsp; Login with Facebook</button></a>
         <br>
         <br>
         <div class="border-top pt-3">
@@ -51,6 +51,8 @@
         </div>
     </div>
 <br>
+
+
 {% endblock content %}
 
 

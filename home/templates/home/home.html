@@ -68,7 +68,12 @@
             </div>
     </section>
 
-    <section class="footer">
+    <div class="about-button-mine">
+        <button><a href="{% url 'home-contact' %}">Contact Us</a></button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button><a href="{% url 'home-about' %}">About Us</a></button>
+    </div>
+
+     <section class="footer">
         <div class="end-block">
 
             <!-- create a about the author/deveroper page -->
@@ -76,7 +81,7 @@
 
             <p>Drop us a line or catch up with us and other like minded individuals on social media!</p>
 
-            <div class="row">
+            <div class="row-mine">
                 <div class="column">
                     <a href="mailto:8amitjain@gmail.com"><img src="{% static 'home/icons/envelope-regular.svg' %}" alt="logo"></a>
                 </div>

@@ -1,5 +1,42 @@
-{% extends 'home/base.html' %}
-{% block content %}
+{% extends "home/base.html" %}
+{% block css%}
+<style>
+        .content-section{
+            margin: 5%;
+            padding: 2em;
+            border-radius: 2em;
+            border-style: solid;
+            border-color:#f8f8f8;
+        }
+        @media only screen and (min-width: 1250px) {
+          .content-section{
+            margin: 5em 15%;
+            padding: 2em;
+            border-radius: 2em;
+            border-style: solid;
+            border-color:#f8f8f8;
+            font-size: 1.2em;
+        }
+        }
 
-    <h2 style="padding:3em;">About Us</h2>
+    </style>
+{% endblock%}
+
+{% block content %}
+    <div class="content-section">
+        <h1 class="uk-text-muted"><b>About Us</b></h1>
+        <p> Making vision board physically is a tedious process so we decided to take that concept to a website and Since
+            most of the time we have our phones in our hand we can easily see Vision Board anytime anywhere and its
+            extremely easy to make and use.</p>
+
+        <br>
+        <br>
+        <h1 class="uk-text-muted"><b>Our Vision</b></h1>
+        <p>To help achieve your dreams.</p>
+        <br>
+        <br>
+
+        <h2 class="uk-text-muted"><b>Start creating the dream, of your life.</b></h2>
+
+    </div>
 {% endblock content %}

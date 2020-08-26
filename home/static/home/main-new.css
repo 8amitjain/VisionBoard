@@ -317,13 +317,41 @@ section .middle-2{
     padding: .5em 2.2em ;
     line-height: 1.8em;
 }
+
+.about-button-mine{
+    padding: 2em 0 2em 0em;
+    margin-top: -3em;
+    text-align: center;
+
+}
+
+.about-button-mine a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 1.1em;
+
+}
+
+
+.about-button-mine button {
+    text-transform: uppercase;
+    border: none;
+    border-radius: 1.5em;
+    background-color: #0EC0C0;
+    padding: 0.5em 1em;
+}
+
+.about-button-mine button:hover {
+    background-color: #10D1D1;
+}
+
 /* footer */
 
 
 .footer .end-block { 
     background-color: rgb(245, 214, 161);
     padding: 2em 2em;
-    margin: .5em -1em;
+    margin: 0em -1em;
     color: white;
 }
 
@@ -335,25 +363,33 @@ section .middle-2{
 .footer .end-block p {
     text-align: justify;
     font-size: 1.1em;
-    padding: 0 1em;
+    padding: 0 0.8em;
 }
 
 .footer .end-block a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.footer .end-block a:hover {
     color: whitesmoke;
     text-decoration: none;
     font-size: 1.2em;
 }
 
+
 .footer .end-block img{
     width: 2em;
 }
-.footer .end-block .row {
+.footer .end-block .row-mine {
     display: inline-flex;
-    padding-left: 1em;
+    padding-left: 1.5em;
 }
 
 .footer .end-block .column {
-    padding: 1em 2em 0 0.5em; 
+    padding: 1em 2em 0 0.5em;
     /* check padding changed last from 2 to 0 */
     margin-right: 1em;
     margin-left: -3%;
